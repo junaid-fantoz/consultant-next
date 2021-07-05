@@ -28,4 +28,4 @@
 - `Used Next's <Image />` instead of html image tag, as it has many cool features like caching, image quality and much more and is recommended by Next.
 - Added the domain allowed for the hosted image.
 - `Launches` api logic is implemented in *`getStaticProps`* api as we can write server side logic in there, including database queries, it's called at build time and only once when the bundle is built.
-- `LaunchPads` api is called on client side just to make it separate, i have not changed that, since this is kinda same to implement as Launches, so we can park this for later.
+- `LaunchPads` api is called on client side just to make it separate, I have not changed that, since this is kinda same to implement as Launches and also just to get an idea of the coolest built-in `/api/..` lambda functions ;)
