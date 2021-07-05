@@ -1,0 +1,68 @@
+@import "~ddbreakpoints/lib/dd.breakpoints";
+@import "./variables.scss";
+
+body {
+  margin: 0;
+  background-color: $base-bg;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: $text-dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0;
+}
+
+
+header {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: $header-bg;
+  color: $text-light;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/images/space-photo.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position: top;
+}
+
+nav {
+  height: 50px;
+}
+
+main, footer, nav {
+  margin: 0;
+
+  @include bp(m) {
+    margin: 0 $margin-m 0 $margin-m;
+  }
+  
+  @include bp(l) {
+    margin: 0 $margin-lg 0 $margin-lg;
+  }
+}
+
+main {
+  margin-top: 20px;
+
+  @include bp(m) {
+    margin-top: 40px;
+  }
+}
+
+.layout-l {
+  width: 100%;
+  margin: 0 auto;
+
+  @include bp(l) {
+    max-width: 1000px;
+  }
+
+  @include bp(xl) {
+    max-width: 1400px;
+  }
+}

@@ -1,0 +1,41 @@
+@import "~ddbreakpoints/lib/dd.breakpoints";
+
+.titleContainer {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-weight: normal;
+    font-size: 32px;
+  
+    @include bp(m) {
+      font-size: 46px;
+    }
+  
+    @include bp(l) {
+      font-size: 5vw;
+    }
+}
+
+.navContent {
+  margin-top: 20px;
+  margin-left: 20px;
+  @include bp(m) {
+    margin-left: auto;
+  }
+}
+
+.company {
+  font-size: 18px;
+}
+
+.buttonContainer {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+}

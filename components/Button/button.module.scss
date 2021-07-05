@@ -1,0 +1,52 @@
+@import "~ddbreakpoints/lib/dd.breakpoints";
+// @import "background";
+@import "../styles/variables.scss";
+
+.btn--primary {
+    background-color: $btn-primary;
+    color: $text-light;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 40px;
+    cursor: pointer;
+    height: 42px;
+    width: 100%;
+  
+    @include bp(m) {
+      width: fit-content;
+    }
+  
+    &:hover, &:focus {
+      background-color: darken($btn-primary, 10%);
+    }
+}
+
+.btn--link {
+    border: none;
+    text-decoration: underline;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn--icon {
+    height: 40px;
+    border: none;
+    width: 40px;
+    cursor: pointer;
+  
+    @include bp(m) {
+      height: 30px;
+      width: 30px;
+    }
+  }
+  
+  .btn--icon:hover, .btn--icon:focus {
+    transform: translateY(-1px);
+  }
+  
+  .btn--icon:active {
+    transform: translateY(1px);
+  }

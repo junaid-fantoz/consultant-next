@@ -1,0 +1,105 @@
+@import "~ddbreakpoints/lib/dd.breakpoints";
+@import "../styles/variables.scss";
+
+.launchItem {
+    border-bottom: 1px solid $launch-item-border;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 10px;
+    min-height: 200px;
+  
+  
+    @include bp(m) {
+      flex-direction: row;
+      align-items: flex-start;
+      margin: 40px 40px 10px 40px;
+    }
+}
+
+.patchContainer {
+    width: 120px;
+    text-align: center;
+}
+
+
+.patch { 
+    width: 100%;
+    margin-top: 20px;
+    max-width: 100px;
+}
+
+.detailsContainer {
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+
+  @include bp(m) {
+    text-align: left;
+  }
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: $text-medium;
+}
+
+.failed {
+    color: $error-text;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 40px;
+
+  @include bp(m) {
+    flex-direction: row;
+  }
+}
+
+.link {
+    color: $link-btn-text;
+    text-decoration: none;
+    border: 2px solid $link-btn-border;
+    padding: 6px 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 20px;
+    text-align: center;
+  
+    @include bp(m) {
+      margin-bottom: 0;
+      max-width: unset;
+      width: unset;
+    }
+  }
+  
+.link:hover, .link:focus {
+  background-color: $link-btn-border;
+}
+
+.flightNumber {
+  width: 120px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flightNumber > dd {
+  font-size: 26px;
+  margin: 0;
+}
+
+
+  

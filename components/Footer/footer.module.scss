@@ -1,0 +1,26 @@
+@import "~ddbreakpoints/lib/dd.breakpoints";
+@import "../styles/variables.scss";
+
+.copyright {
+    color: $text-medium;
+    margin-top: 20px;
+
+    @include bp(m) {
+        margin-top: 0;
+    }
+}
+
+.content {
+    min-height: 70px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+
+    @include bp(m) {
+        justify-content: space-between;
+        flex-direction: row;
+        padding-bottom: 0;
+    }
+}

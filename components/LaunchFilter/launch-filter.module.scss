@@ -1,0 +1,26 @@
+@import "~ddbreakpoints/lib/dd.breakpoints";
+@import "../styles/variables.scss";
+
+.launchFilter {
+    background-color: $filter-bg;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 2px solid $launch-item-border;
+    justify-content: space-between;
+  
+    @include bp(m) {
+      flex-direction: row;
+      align-items: flex-end;
+
+        & > button {
+            margin-top: 0px;
+        }
+    }
+
+    & > button {
+        margin-top: 20px;
+    }
+}

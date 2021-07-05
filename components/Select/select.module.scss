@@ -1,0 +1,18 @@
+// @import "~ddbreakpoints/lib/dd.breakpoints";
+// @import "../styles/variables.scss";
+
+/**
+ * React select style overrides - Implemented in the component itself
+ **/
+
+// #example-select {
+//   @media only screen and (max-width: 600px) {
+//       margin-top: 0;
+//       max-width: 250px;
+//       margin-right: 20px;
+//   }
+// }
+
+.__dropdown-indicator {
+    padding: 7px !important;
+  }

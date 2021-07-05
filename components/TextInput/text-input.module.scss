@@ -1,0 +1,29 @@
+@import "~ddbreakpoints/lib/dd.breakpoints";
+@import "../styles/variables.scss";
+
+.textInput {
+  color: #5A6066;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include bp(m) {
+    margin-right: 20px;
+    max-width: 220px;
+  }
+}
+
+.label {
+    display: block;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.field {
+    margin-top: 8px;
+    border: 1px solid $link-btn-border;
+    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+}

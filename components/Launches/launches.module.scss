@@ -1,0 +1,26 @@
+@import "~ddbreakpoints/lib/dd.breakpoints";
+@import "../styles/variables.scss";
+
+
+.launches {
+    background-color: $launches-bg;
+}
+  
+.summary {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    font-weight: bold;
+    color: $text-medium;
+}
+
+.caption {
+    margin: auto;
+    font-size: 20px;
+    color:$text-dark;
+    padding-bottom: 20px;
+  }
+
+.center{
+    text-align: center;
+}
