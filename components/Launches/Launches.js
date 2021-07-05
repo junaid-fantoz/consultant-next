@@ -97,7 +97,6 @@ const Launches = ({ launches }) => {
       selectedMinYear?.value ||
       selectedLaunchPad?.value
     ) {
-      console.log('check value', selectedMaxYear, selectedMinYear, selectedLaunchPad);
       filteredLaunches = launches.filter((l) => {
         const {
           rocketName,
@@ -110,12 +109,6 @@ const Launches = ({ launches }) => {
         if ((!keywords || isKeywordPresent(keywords, rocketName, payloadId, flightNumber, launchDate)) && (!selectedLaunchPad || selectedLaunchPad?.value === launchSiteId) && (!selectedMaxYear || checkMaxYear(selectedMinYear, selectedMaxYear, launchDate)) && (!selectedMinYear || checkMinYear(selectedMinYear, selectedMaxYear, launchDate))) {
           return l;
         }
-
-        // if ((selectedMinYear && selectedMinYear.value === '') || (selectedMaxYear && selectedMaxYear.value === '')) {
-        //   if (!keywords || isKeywordPresent(keywords, rocketName, payloadId, flightNumber, launchDate) || (!selectedLaunchPad || selectedLaunchPad?.value === launchSiteId)) {
-        //     return l;
-        //   }
-        // }
 
         return null;
       });
