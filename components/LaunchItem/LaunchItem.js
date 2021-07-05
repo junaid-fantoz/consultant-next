@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
+import Image from "next/image";
 
 import styles from "./launch-item.module.scss";
 
@@ -39,7 +40,13 @@ const LaunchItem = ({
   return (
     <article className={styles.launchItem}>
       <div className={styles.patchContainer}>
-        <img className={styles.patch} alt="Mission patch" src={imageUrl} />
+        <Image
+          src={imageUrl}
+          className={styles.patch}
+          alt="Mission patch"
+          width="200"
+          height="200"
+        />
       </div>
       <div className={styles.detailsContainer}>
         <p className={styles.title}>

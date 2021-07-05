@@ -12,7 +12,7 @@ import moment from "moment";
  * handling the fetching and filtering of the launch data and rendering
  * the launches that match the selected filters
  */
-const Launches = () => {
+const Launches = ({ launches }) => {
   const [state, setState] = useState({
     isLoading: false,
     error: null,
@@ -25,7 +25,7 @@ const Launches = () => {
     dropDownYears: [],
   });
 
-  const [launches, setLaunches] = useState();
+  // const [launches, setLaunches] = useState();
 
   const handleFilterChange = (filterObj) => {
     setState({ ...state, filter: filterObj });
@@ -35,44 +35,6 @@ const Launches = () => {
    * Responsible for transforming the data from the launch and launchpad api's
    * into a usable and consistent format for the LaunchItem component
    */
-  const _launchDataTransform = (launchResp, launchPads) => {
-    const {
-      flight_number: flightNumber,
-      launch_success: missionFailed,
-      launch_site: { site_name: launchSiteName, site_id: launchSiteId },
-      links: {
-        mission_patch: missionPatchLink,
-        article_link: articleLink,
-        video_link: videoLink,
-        reddit_campaign: redditCampaignLink,
-        reddit_launch: redditLaunchLink,
-        reddit_media: redditMediaLink,
-        presskit: pressKitLink,
-      },
-      rocket: { rocket_name: rocketName },
-      payloads: [{ payload_id: payloadId }],
-      launch_date_local: launchDate,
-    } = launchResp;
-
-    const resultObj = {
-      rocketName,
-      payloadId,
-      launchDate,
-      launchSiteName,
-      launchSiteId,
-      flightNumber,
-      missionFailed,
-      missionPatchLink,
-      redditCampaignLink,
-      redditLaunchLink,
-      redditMediaLink,
-      pressKitLink,
-      articleLink,
-      videoLink,
-    };
-
-    return resultObj;
-  };
 
   const _renderLaunches = () => {
     const {
@@ -190,21 +152,8 @@ const Launches = () => {
     });
   };
 
-  const getAllLaunches = async () => {
-    const result = await axios.get("/api/launches");
-    return result.data;
-  };
-
   useEffect(() => {
-    getAllLaunches().then((launches) => {
-      const transformedLaunches = launches.map((l) =>
-        _launchDataTransform(l, [])
-      );
-
-      setLaunches(transformedLaunches);
-
-      setDropDownYearsValues(transformedLaunches);
-    });
+    setDropDownYearsValues(launches);
   }, []);
 
   const { dropDownYears } = state;
