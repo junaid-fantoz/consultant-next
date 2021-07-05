@@ -1,5 +1,3 @@
-// import "ddbreakpoints/lib/dd.breakpoints";
-// import "background";
 import "../components/styles/base.scss";
 import "../components/styles/variables.scss";
 
